@@ -5,7 +5,7 @@ import { deployContract } from './utils/deployment-helper.js'
 
 const contract = compileContract('../Voter.sol', 'Voter');
 const web3 = createWeb3('http://localhost:8545');
-const sender = '0x2528e701a1901a55b0e80aff88fea48eb49e5bcb';
+const sender = '0xc0d33e6bb2a021600d8852c22542550151a8f6ad';
 
 deployContract(web3, contract, sender)
     .then(() => {

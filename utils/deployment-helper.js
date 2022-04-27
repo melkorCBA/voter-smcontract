@@ -14,7 +14,7 @@ const deployContract = async (web3, contract, sender) => {
     );
 
 
-
+    console.log(`Estimated gas: ${gasEstimate} wei`);
     console.log("Deploying constract");
     const contractInstance = await Contract.deploy({
         data: bytecode
@@ -22,7 +22,8 @@ const deployContract = async (web3, contract, sender) => {
         .send(
             {
                 from: sender,
-                gas: gasEstimate
+                gas: gasEstimate,
+                gasPrice: ' 30000000000'
             }
         )
         .on('transactionHash', (transactionHash) => {
